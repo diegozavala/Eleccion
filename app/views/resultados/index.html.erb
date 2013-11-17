@@ -1,0 +1,31 @@
+<h1>Listing resultados</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mesa</th>
+      <th>Candidato</th>
+      <th>Votos</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resultados.each do |resultado| %>
+      <tr>
+        <td><%= resultado.mesa %></td>
+        <td><%= resultado.candidato.nombre %></td>
+        <td><%= resultado.votos %></td>
+        <td><%= link_to 'Show', resultado %></td>
+        <td><%= link_to 'Edit', edit_resultado_path(resultado) %></td>
+        <td><%= link_to 'Destroy', resultado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resultado', new_resultado_path %>

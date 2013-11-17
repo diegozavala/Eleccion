@@ -1,0 +1,29 @@
+<h1>Listing circunscripcions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Comuna</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @circunscripcions.each do |circunscripcion| %>
+      <tr>
+        <td><%= circunscripcion.nombre %></td>
+        <td><%= circunscripcion.comuna %></td>
+        <td><%= link_to 'Show', circunscripcion %></td>
+        <td><%= link_to 'Edit', edit_circunscripcion_path(circunscripcion) %></td>
+        <td><%= link_to 'Destroy', circunscripcion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Circunscripcion', new_circunscripcion_path %>

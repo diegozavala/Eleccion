@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @circunscripcion.nombre %>
+</p>
+
+<p>
+  <strong>Comuna:</strong>
+  <%= @circunscripcion.comuna %>
+</p>
+
+<%= link_to 'Edit', edit_circunscripcion_path(@circunscripcion) %> |
+<%= link_to 'Back', circunscripcions_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mesa:</strong>
+  <%= @resultado.mesa %>
+</p>
+
+<p>
+  <strong>Candidato:</strong>
+  <%= @resultado.candidato %>
+</p>
+
+<p>
+  <strong>Votos:</strong>
+  <%= @resultado.votos %>
+</p>
+
+<%= link_to 'Edit', edit_resultado_path(@resultado) %> |
+<%= link_to 'Back', resultados_path %>

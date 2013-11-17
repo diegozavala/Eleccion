@@ -1,0 +1,31 @@
+<h1>Listing mesas</h1>
+
+<table>
+  <thead>
+    <tr>
+		<th>Circunscripcion</th>
+      <th>Local</th>
+      <th>Nombre</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mesas.each do |mesa| %>
+      <tr>
+		 <td><%= mesa.local.circunscripcion.nombre %></td>
+        <td><%= mesa.local.nombre %></td>
+        <td><%= mesa.nombre %></td>
+        <td><%link_to 'Show', mesa %></td>
+        <td><%= link_to 'Ingresar Resultados', edit_mesa_path(mesa) %></td>
+        <td><% link_to 'Destroy', mesa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mesa', new_mesa_path %>

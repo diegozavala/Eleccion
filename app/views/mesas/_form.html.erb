@@ -1,0 +1,71 @@
+<%= form_for(@mesa) do |f| %>
+  <% if @mesa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mesa.errors.count, "error") %> prohibited this mesa from being saved:</h2>
+
+      <ul>
+      <% @mesa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <% f.label :circunscripcion %><br>
+	<%@mesa.circunscripcion%>
+	
+    <% f.collection_select :circunscripcion, Circunscripcion.all, :id, :nombre%>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br>
+	<%= @mesa.nombre%>
+    <% f.text_field :nombre %>
+  </div>
+  
+  <div class="field">
+    <% f.label :local %><br>
+    <% f.collection_select :local, Local.all, :id, :nombre%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :browne %><br>
+    <%= f.number_field :browne %>
+  </div>
+  <div class="field">
+    <%= f.label :duran%><br>
+    <%= f.number_field :duran %>
+  </div>
+  <div class="field">
+    <%= f.label :freire %><br>
+    <%= f.number_field :freire%>
+  </div>
+  <div class="field">
+    <%= f.label :golborne %><br>
+    <%= f.number_field :golborne%>
+  </div>
+  <div class="field">
+    <%= f.label :Lemuñir %><br>
+    <%= f.number_field :Lemuñir%>
+  </div>
+  <div class="field">
+    <%= f.label :orellana %><br>
+    <%= f.number_field :orellana%>
+  </div>
+  <div class="field">
+    <%= f.label :ripetti %><br>
+    <%= f.number_field :ripetti%>
+  </div>
+  <div class="field">
+    <%= f.label :sule %><br>
+    <%= f.number_field :sule%>
+  </div>
+  <div class="field">
+    <%= f.label :teiller %><br>
+    <%= f.number_field :teiller%>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
